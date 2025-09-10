@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  overflow: hidden;
+}
+
+.menu-screen {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-title {
+  font-size: 3rem;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0, 0 0 20px #f00;
+  margin-bottom: 40px;
+  animation: pulse 2s infinite;
+}
+
+.menu-btn {
+  padding: 15px 40px;
+  margin: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid #0f0;
+  background: black;
+  color: #f00;
+  cursor: pointer;
+  border-radius: 12px;
+  text-shadow: 0 0 5px #f00;
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: #0f0;
+  color: black;
+  box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #0f0, 0 0 20px #f00;
+  }
+  50% {
+    text-shadow: 0 0 20px #0f0, 0 0 30px #f00;
+  }
+}
+
+.settings-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid #0f0;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #0f0;
+}
+
+.settings-panel button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: black;
+  color: #f00;
+  border: 2px solid #0f0;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.settings-panel button:hover {
+  background-color: #0f0;
+  color: black;
+  box-shadow: 0 0 10px #0f0, 0 0 20px #f00;
+}
+
+#scoreBoard {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: #0f0;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 0 0 8px #0f0;
+  z-index: 9;
+}
+
+/* Jumpscare overlay is hidden by default */
+#jumpscareScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#jumpscareScreen.hidden {
+  display: none;
+}
+
+#jumpscareScreen img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+
+/* Victory overlay */
+#victoryScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  flex-direction: column;
+}
+
+#victoryScreen.hidden { display: none; }
+
+#victoryContent {
+  text-align: center;
+  padding: 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+}
+
+#victoryTitle {
+  font-size: 72px;
+  color: #fff;
+  margin: 0 0 20px 0;
+  letter-spacing: 6px;
+  text-shadow: 0 0 12px rgba(255,255,255,0.2), 0 0 24px rgba(255,200,0,0.25), 0 0 48px rgba(255,150,0,0.15);
+  animation: victoryGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes victoryGlow {
+  0% { text-shadow: 0 0 8px rgba(255,255,255,0.2), 0 0 20px rgba(255,200,0,0.2); transform: scale(1); }
+  50% { text-shadow: 0 0 18px rgba(255,255,255,0.35), 0 0 40px rgba(255,200,0,0.35); transform: scale(1.05); }
+  100% { text-shadow: 0 0 8px rgba(255,255,255,0.2), 0 0 20px rgba(255,200,0,0.2); transform: scale(1); }
+}
+
+#victoryButtons { display:flex; gap: 16px; justify-content:center; margin-top: 10px; }
+#victoryButtons .menu-btn { padding: 12px 24px; font-size: 18px; border-radius: 8px; cursor: pointer; }
+

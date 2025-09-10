@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+	
+<!-- Mirrored from www.typinggames.zone/web/resources/templates/frontend/typingmaster/blop3/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Sep 2025 05:16:14 GMT -->
+<head>
+		<title>Bop</title>
+		
+		<script src="js/Mover.js"></script>
+		<script src="js/Cell.js"></script>
+		<script src="js/World.js"></script>
+		<script src="js/Camera.js"></script>
+		<script src="js/MusicPlayer.js"></script>
+		<script>
+		
+		
+		
+window.onkeydown = function(e) {
+  if (e.keyCode == 32 && e.target == document.body) {
+    e.preventDefault();
+  }
+};
+
+
+			// Engine globals
+			var fps = 30;
+			var mspf = 1000 / fps;
+			var updateInterval;
+			var center;
+			var viewport_radius;
+			
+			// Game globals
+			var world;
+			
+			// Setup function called when page loads
+			function main() {
+				var canvas = document.getElementById('canvas');
+				if (canvas.getContext) {
+					// Canvas Setup
+					canvas.height = window.innerHeight;
+					canvas.width = window.innerWidth;
+					center = [canvas.width/2, canvas.height/2];
+					
+					// Initialize the World
+					world = new World(canvas);
+					world.load_level();
+					
+					// Create requestAnimFrame if it doesn't exist
+					window.requestAnimFrame = (function(){
+						return  window.requestAnimationFrame   || 
+							window.webkitRequestAnimationFrame || 
+							window.mozRequestAnimationFrame    || 
+							window.oRequestAnimationFrame      || 
+							window.msRequestAnimationFrame     || 
+							function(/* function */ callback, /* DOMElement */ element){
+								window.setTimeout(callback, mspf);
+							};
+					})();
+					
+					// Animate!
+					(function animloop(){
+						world.update();
+						requestAnimFrame(animloop, canvas);
+					})();
+					// updateInterval = window.setInterval("world.update()", mspf);
+				}
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link id="favicon" rel="icon" type="image/png" href="img/icon_16.png" />
+		<meta name="viewport" content="width=450, user-scalable=no">
+	</head>
+	<body onload="main();">
+		
+		<canvas id="canvas">Sorry, no canvas for you!</canvas>
+		<ul id="controls">
+			<li id="help"><label>Help [H]</label></li>
+			<li id="pause"><label>Pause [P]</label></li>
+			<li id="newlevel"><label>New random level [R]</label></li>
+			<li id="mute"><label>Mute sounds [M]</label></li>
+		</ul>
+		<div id="songinfo" class="idle">
+			<div id="songtitle"></div>
+			<div id="songartist"></div>
+		</div>
+		<div id="pausedmessage" class="messages">
+			<p id="mainmessage">Paused</p>
+			<p id="subtext"><h2 style="text-decoration: underline;" >Click here to continue game</h2></p>
+		</div>
+		<div id="deathmessage" class="messages">
+			<p id="mainmessage">You were consumed!</p>
+			<p id="subtext"><h2 style="text-decoration: underline;" >Click here to restart the level.</h2></p>
+		</div>
+		<div id="warningmessage" class="messages">
+			<p id="mainmessage">Uhhhhh.</p>
+			<p id="subtext">You may just wanna click here to restart the level.</p>
+		</div>
+		<div id="successmessage" class="messages">
+			<p id="mainmessage">Good!</p>
+			<p id="subtext">Click here to start another random level.</p>
+		</div>
+		<div id="helpoverlay">
+			<div id="helpwindow">
+				<div id="helpheader">
+					<h1>BOP</h1><br>
+					<button id="playbutton">Begin playing</button>
+				</div>
+				<div id="helpbody">
+					<div id="helpbody-inner">
+					<br><br><br>
+						<p>You are the <strong style="color:#93FBFF">bright blue</strong> cell in the center.</p>
+						<p>Your job is to eat <strong style="color:#73DBEF">smaller</strong> cells, while avoiding getting absorbed by <strong style="color:#FF6A48">larger</strong> cells.</p>
+						<p>Become the biggest cell in the pond and you win!</p>
+						<h2>Controls</h2>
+						<p>Move by pressing the letter on any cell. You'll propel in that direction.</p>
+						
+						<h3>Keyboard Shortcuts</h3>
+							<p><span class="key">BACKSPACE</span> - Random new level</p>
+							<p><span class="key">ESC</span> - Pause</p>
+							<p><span class="key">ENTER</span> - Zoom in</p>
+							<p><span class="key">SPACE</span> - Zoom out</p>
+						<h2>Credits</h2>
+						<p>Music is included from the <a href="http://ccmixter.org/" target="_blank">ccMixter</a> community: <a href="http://ccmixter.org/files/Pitx/19513" name="Black Rainbow on ccMixter" target="_blank">"Black Rainbow"</a> by Pitx, and <a href="http://ccmixter.org/files/rewob/17808" name="Circles on ccMixter" target="_blank">"Circles"</a> by rewob.
+					</div>
+				</div>
+				<div id="helpfooter">
+					
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+<!-- Mirrored from www.typinggames.zone/web/resources/templates/frontend/typingmaster/blop3/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 05 Sep 2025 05:16:19 GMT -->
+</html>

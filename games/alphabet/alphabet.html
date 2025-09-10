@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type The Alphabet - KeySmashers 💥</title>
+  <link rel="stylesheet" href="alphabet.css">
+</head>
+<body>
+  <div class="container">
+    <h1>TYPE THE ALPHABET</h1>
+    <p>How fast can you type?</p>
+    
+    <div class="game">
+      <div id="current-letter">A</div>
+      <input type="text" id="input" placeholder="Start typing..." autofocus>
+      <div class="timer">
+        <span id="time">0.00</span> ⏱
+      </div>
+      <button id="reset">Reset</button>
+    </div>
+
+    <div class="records">
+      <p><strong>Your Best:</strong> <span id="best-time">--</span></p>
+    </div>
+  </div>
+
+  <script src="alphabet.js"></script>
+</body>
+</html>

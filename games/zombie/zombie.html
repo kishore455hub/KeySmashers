@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Type to Survive 🧟‍♂️</title>
+  <link rel="stylesheet" href="zombie.css" />
+  <link rel="stylesheet" href="zombiemenu.css" />
+</head>
+<body>
+
+  <!-- Main Menu -->
+  <div id="mainMenu" class="menu-screen">
+    <h1 class="menu-title">Type to Survive 🧟‍♂️</h1>
+    <button class="menu-btn" id="playBtn">Play</button>
+    <button class="menu-btn" id="exitBtn">Exit</button>
+  </div>
+
+  <!-- Mode Selection -->
+  <div id="modeMenu" class="menu-screen hidden">
+    <h2 class="menu-title">Select Mode</h2>
+    <button class="menu-btn" id="play3WavesBtn">3 Waves</button>
+    <button class="menu-btn" id="playInfinityBtn">Infinity</button>
+    <button class="menu-btn" id="backToMenuBtn">⬅ Back</button>
+  </div>
+
+  <!-- Game UI -->
+  <div class="game-container hidden" id="gameContainer">
+    <h1 class="title">Type to Survive</h1>
+    <canvas id="gameCanvas" width="1000" height="500"></canvas>
+    <input type="text" id="wordInput" placeholder="Type here..." autofocus />
+    <!-- Scoreboard (only for Infinity mode) -->
+    <div id="scoreBoard" class="hidden">Score: <span id="score">0</span></div>
+  </div>
+
+  <!-- Game Over -->
+  <div id="gameOverScreen" class="menu-screen hidden">
+    <h2 class="menu-title">Game Over 💀</h2>
+    <button class="menu-btn" id="retryBtn">Retry</button>
+    <button class="menu-btn" id="menuBtn">Main Menu</button>
+  </div>
+
+  <!-- Countdown -->
+  <div id="countdown" class="countdown-text hidden"></div>
+
+  <!-- VICTORY OVERLAY -->
+<div id="victoryScreen" class="hidden">
+  <div id="victoryContent">
+     <h1 id="victoryTitle">YOU SURVIVED!</h1>
+     <div id="victoryButtons">
+       <button class="menu-btn" id="victoryReplayBtn">Replay</button>
+       <button class="menu-btn" id="victoryMenuBtn">Main Menu</button>
+      </div>
+    </div>
+</div>
+  <!-- VICTORY AUDIO (optional) -->
+  <audio id="victoryAudio" src="games/zombie/assets/sounds/victory.mp3" preload="auto"></audio>
+
+    <!-- JUMPSCARE OVERLAY (shows scary full-screen image) -->
+  <div id="jumpscareScreen" class="hidden">
+    <img src="assets/scary.jpg" alt="scare image">
+  </div>
+
+  <!-- JUMPSCARE AUDIO: place your scary sound at assets/sounds/jumpscare.mp3 -->
+  <audio id="jumpscareAudio" src="assets/sounds/jumpscare.mp3" preload="auto"></audio>
+  
+  <script src="zombie.js"></script>
+</body>
+</html>
