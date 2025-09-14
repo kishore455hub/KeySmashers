@@ -310,9 +310,9 @@ function startCountdown(callback) {
 // ========== Game Config ==========
 function computeWaveConfig() {
   if (gameMode === "3waves") {
-    if (currentWave === 1) { zombiesPerWave = 1; spawnInterval = 2800; }
-    else if (currentWave === 2) { zombiesPerWave = 1; spawnInterval = 1800; }
-    else if (currentWave === 3) { zombiesPerWave = 1; spawnInterval = 1200; }
+    if (currentWave === 1) { zombiesPerWave = 7; spawnInterval = 2800; }
+    else if (currentWave === 2) { zombiesPerWave = 8; spawnInterval = 1800; }
+    else if (currentWave === 3) { zombiesPerWave = 10; spawnInterval = 1200; }
   } else {
     // Infinity mode: gentle scaling based on wave
     zombiesPerWave = Math.min(8 + (currentWave - 1) * 2, 40);
