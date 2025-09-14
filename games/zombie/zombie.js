@@ -24,9 +24,9 @@ let jumpscarePlaying = false;
 /**
  * Trigger a full-screen jumpscare:
  * - display scary image (assets/scary.jpg)
- * - try to play assets/sounds/jumpscare.mp3 once (if present)
+ * - play jumpscare sound very loud
  * - fallback to a short WebAudio effect if audio file is missing or blocked
- * - after 2 seconds, hide the overlay and call optional callback (e.g. endGame)
+ * - after ~1.3 seconds, hide the overlay and call optional callback (e.g. endGame)
  */
 function triggerJumpscare(callback) {
   if (jumpscarePlaying) return;
@@ -34,19 +34,25 @@ function triggerJumpscare(callback) {
   const overlay = document.getElementById("jumpscareScreen");
   const audioEl = document.getElementById("jumpscareAudio");
 
-  if (overlay) {
-    overlay.classList.remove("hidden");
-  }
+  if (overlay) overlay.classList.remove("hidden");
 
   let played = false;
+
   if (audioEl) {
     try {
+      // Use Web Audio API to boost volume regardless of system volume
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const source = ctx.createMediaElementSource(audioEl);
+      const gainNode = ctx.createGain();
+
+      // Set a very high gain (loud volume)
+      gainNode.gain.setValueAtTime(5.0, ctx.currentTime); // 5x louder
+
+      source.connect(gainNode).connect(ctx.destination);
       audioEl.currentTime = 0;
       audioEl.play().then(() => {
         played = true;
-      }).catch(() => {
-        // playback might be blocked — we'll fallback
-      });
+      }).catch(() => {});
     } catch (e) {}
   }
 
@@ -60,7 +66,7 @@ function triggerJumpscare(callback) {
         o.type = "sawtooth";
         o.frequency.setValueAtTime(180, ctx.currentTime);
         g.gain.setValueAtTime(0.001, ctx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.6, ctx.currentTime + 0.02);
+        g.gain.exponentialRampToValueAtTime(1.0, ctx.currentTime + 0.02); // boost volume
         o.connect(g); g.connect(ctx.destination);
         o.start();
         g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1.0);
@@ -69,13 +75,14 @@ function triggerJumpscare(callback) {
     }
   }, 150);
 
-  // hide overlay after 2 seconds and call callback (game over)
+  // hide overlay after 1.3 seconds and call callback
   setTimeout(() => {
     if (overlay) overlay.classList.add("hidden");
     jumpscarePlaying = false;
     if (typeof callback === "function") callback();
-  }, 2000);
+  }, 1300);
 }
+
 
 
 // ========== Assets ==========

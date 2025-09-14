@@ -44,8 +44,8 @@ main {
 h2 {
   margin-bottom: 20px;
   font-size: 26px;
-  color: #7d5fff;
-  text-shadow: 0 0 10px #7d5fff, 0 0 20px #4effef;
+  color: #7c5cf3;
+  text-shadow: 0 0 10px #5a3ff0, 0 0 20px #4effef;
 }
 
 /* Game Grid */
@@ -62,7 +62,7 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 255, 200, 0.2);
-  width: 420px;
+  width: 500px;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@ h2 {
 /* Card Image */
 .game-card img {
   width: 100%;
-  height: 275px;
+  height: 290px;
   object-fit: cover;
   filter: brightness(0.9);
   transition: 0.4s ease;
@@ -136,4 +136,151 @@ footer {
   box-shadow: 0 -2px 15px rgba(0, 255, 255, 0.3);
 }
 
+
+/* Header */
+header {
+  background: #111;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  color: #0ff;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: 0 0 8px #0ff, 0 0 18px #00f5ff;
+}
+
+/* Navigation Links */
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #7d5fff;
+  text-shadow: 0 0 10px #7d5fff, 0 0 20px #7d5fff;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #15151d;
+  border-radius: 30px;
+  padding: 5px 10px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 8px 10px;
+  width: 180px;
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+}
+
+.search-bar button {
+  background: none;
+  border: none;
+  color: #0ff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-bar button:hover {
+  color: #7d5fff;
+  text-shadow: 0 0 8px #7d5fff;
+}
+
+/* General Page Content (About, Contact, etc.) */
+
+.page-wrapper {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.page-content {
+  background: #15151d;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25),
+              0 0 40px rgba(125, 95, 255, 0.15);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-content h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #7d5fff;
+  text-align: center;
+  text-shadow: 0 0 10px #7d5fff, 0 0 20px #0ff;
+}
+
+.page-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #dcdcdc;
+  margin-bottom: 15px;
+}
+
+.page-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page-content ul li {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.page-content a {
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.page-content a:hover {
+  color: #7d5fff;
+  text-shadow: 0 0 8px #7d5fff, 0 0 15px #0ff;
+}
+
+
+/* ===== Contact Box Center ===== */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;  /* keeps it vertically centered */
+}
+
+.page-content {
+  background: #0a0a1a;
+  color: #ddd;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
 

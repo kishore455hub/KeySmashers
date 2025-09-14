@@ -6,156 +6,96 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>KeySmashers 💥</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Games</a>
-      <a href="#">About</a>
+      <a href="index.html">🏠 Home</a>
+      <a href="pages/contact.html">✉️ Contact</a>
+      <a href="pages/about.html">ℹ️ About</a>
     </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search games..." id="searchInput" onkeyup="searchGames()">
+      <button onclick="searchGames()">🔍</button>
+    </div>
   </header>
 
+  <!-- Main -->
   <main>
-    <h2>Choose Your Game</h2>
-    <div class="game-grid">
+    <h2>Choose Your Game!</h2>
+    <div class="game-grid" id="gameGrid">
       <!-- Game Card -->
       <div class="game-card">
         <img src="games/zombie/assets/zombiegamecard.png" alt="Type to Survive">
         <h3>Type to Survive 🧟</h3>
-        
         <a href="games/zombie/zombie.html" class="play-btn">Play Now</a>
       </div>
 
-
-       <!-- Game Card -->
+      <!-- Game Card -->
       <div class="game-card">
-        <img src="games/Ztype/media/typingattack-small.png" alt="Type to Survive">
+        <img src="games/Ztype/media/typingattack-small.png" alt="Ztype">
         <h3>Ztype</h3>
-        
         <a href="games/Ztype/ztype.html" class="play-btn">Play Now</a>
       </div>
-     
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/room-escape-type-for-your-life-small.png" alt="Type to Survive">
-        <h3>Type to Survive 🧟</h3>
-        
-        <a href="games/roomescape/roomescape.html" class="play-btn">Play Now</a>
+        <img src="assets/gamecards/Z-Type-3D.png" alt="ZType-3D">
+        <h3>Ztype-3D</h3>
+        <a href="games/ZType-3D/index.html" class="play-btn">Play Now</a>
       </div>
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
+        <img src="assets/gamecards/meteor.jpg" alt="Meteor Arena">
         <h3>Meteor Arena</h3>
-        
         <a href="games/meteorarena2/meteorarena.html" class="play-btn">Play Now</a>
       </div>
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/aivirus4/aivirus.html" class="play-btn">Play Now</a>
+        <img src="assets/gamecards/sparta.png" alt="Sparta">
+        <h3>Sparta</h3>
+        <a href="games/sparta/index2.html" class="play-btn">Play Now</a>
       </div>
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/backspace3d2/backspace3d.html" class="play-btn">Play Now</a>
-      </div>
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/beetypes2/index778b.html" class="play-btn">Play Now</a>
-      </div>
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
+        <img src="assets/gamecards/blop.png" alt="blop">
+        <h3>Blop</h3>
         <a href="games/blop3/index2.html" class="play-btn">Play Now</a>
       </div>
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/hextris-key-ver-small.png" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/hextris/1/index.html" class="play-btn">Play Now</a>
-      </div
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/lostspace/index.html" class="play-btn">Play Now</a>
-      </div
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/mousegame2/index.html" class="play-btn">Play Now</a>
-      </div
-
-
-    
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/raindrop3/index.html" class="play-btn">Play Now</a>
-      </div
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/sparta/index2.html" class="play-btn">Play Now</a>
-      </div
-
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
+        <img src="assets/gamecards/AlphaTyper.png" alt="AlphaTyper">
+        <h3>AlphaTyper</h3>
         <a href="games/alphabet/alphabet.html" class="play-btn">Play Now</a>
-      </div
-
-
-      <!-- Game Card -->
-      <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/ZType-3D/index.html" class="play-btn">Play Now</a>
-      </div
+      </div>
 
       <!-- Game Card -->
       <div class="game-card">
-        <img src="assets/gamecards/meteor.jpg" alt="Type to Survive">
-        <h3>Meteor Arena</h3>
-        
-        <a href="games/alien/index.html" class="play-btn">Play Now</a>
-      </div
+        <img src="assets/gamecards/rain.png" alt="raindrop">
+        <h3>Rain Drop</h3>
+        <a href="games/raindrop3/index.html" class="play-btn">Play Now</a>
+      </div>
 
+      <!-- Game Card -->
+      <div class="game-card">
+        <img src="assets/gamecards/room-escape-type-for-your-life-small.png" alt="Room Escape">
+        <h3>Room Escape</h3>
+        <a href="games/roomescape/roomescape.html" class="play-btn">Play Now</a>
+      </div>
 
+      <!-- Game Card -->
+      <div class="game-card">
+        <img src="assets/gamecards/hextris-key-ver-small.png" alt="Hextris">
+        <h3>Hextris</h3>
+        <a href="games/hextris/1/index.html" class="play-btn">Play Now</a>
+      </div>
 
-     
-        
       <!-- Future Games (Placeholder) -->
       <div class="game-card">
         <img src="assets/coming-soon.png" alt="Coming Soon">
@@ -164,12 +104,43 @@
         <a href="#" class="play-btn disabled">Locked</a>
       </div>
     </div>
+
+    <!-- Message if no games found -->
+    <p id="noResults" style="display:none; margin-top:20px; font-size:18px; color:#f44; text-shadow:0 0 10px #f44;">
+      ❌ No games found!
+    </p>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 KeySmashers 💥 | Improve your typing skills with fun games</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- Script -->
+  <script>
+    function searchGames() {
+      let input = document.getElementById("searchInput").value.toLowerCase();
+      let cards = document.getElementsByClassName("game-card");
+      let noResults = document.getElementById("noResults");
+      let found = false;
+
+      for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+          cards[i].style.display = "flex"; // Show card
+          found = true;
+        } else {
+          cards[i].style.display = "none"; // Hide card
+        }
+      }
+
+      // Show "no results" message if nothing matches
+      if (!found && input !== "") {
+        noResults.style.display = "block";
+      } else {
+        noResults.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
