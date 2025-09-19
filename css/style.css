@@ -16,10 +16,10 @@ header {
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
 }
 header h1 {
-  color: #0ff;
+  color: rgb(255, 0, 0);
   font-size: 28px;
   font-weight: bold;
-  text-shadow: 0 0 8px #0ff, 0 0 18px #00f5ff;
+  text-shadow: 0 0 8px rgba(255, 81, 0, 0.822), 0 0 18px #ff4800d8;
 }
 
 nav a {
